@@ -6,7 +6,7 @@ const movieSelect = document.getElementById('movie');
 
 populateUI();
 
-let ticketPrice = +movieSelect.value;
+let ticketPrice = pareseInt(movieSelect.value);
 
 // Save selected movie index and price
 function setMovieData(movieIndex, moviePrice) {
@@ -49,7 +49,7 @@ function populateUI() {
 
 // Movie select event
 movieSelect.addEventListener('change', e => {
-  ticketPrice = +e.target.value;
+  ticketPrice = parseInt(e.target.value);
   setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
 });
